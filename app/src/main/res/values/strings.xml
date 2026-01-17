@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">First App</string>
+    <string name="roll_dice">Бросить кубик</string>
+    <string name="cube_dec">Кубик</string>
+    <string name="button_dec">Кнопка</string>
+</resources>
