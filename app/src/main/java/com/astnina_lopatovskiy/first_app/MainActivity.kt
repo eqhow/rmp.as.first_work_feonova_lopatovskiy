@@ -1,20 +1,25 @@
 package com.astnina_lopatovskiy.first_app
 
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import com.astnina_lopatovskiy.first_app.databinding.ActivityMainBinding
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        val diceImage: ImageView = findViewById(R.id.diceImage)
-        val rollButton: Button = findViewById(R.id.rollButton)
-        rollButton.setOnClickListener {
+
+        // подключаем binding
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        // кнопка
+        binding.rollButton.setOnClickListener {
             val number = Random.nextInt(1, 7)
+
             val imageRes = when (number) {
                 1 -> R.drawable.dice_1
                 2 -> R.drawable.dice_2
@@ -24,7 +29,7 @@ class MainActivity : AppCompatActivity() {
                 else -> R.drawable.dice_6
             }
 
-            diceImage.setImageResource(imageRes)
+            binding.diceImage.setImageResource(imageRes)
         }
     }
 }

@@ -7,6 +7,10 @@ android {
     namespace = "com.astnina_lopatovskiy.first_app"
     compileSdk = 36
 
+    viewBinding {
+        enable = true
+    }
+
     defaultConfig {
         applicationId = "com.astnina_lopatovskiy.first_app"
         minSdk = 24
